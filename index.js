@@ -11,7 +11,7 @@ app.use("/camera/recorded", index('recorded'));
 app.get("/camera", function(req, res){
 	readdirLife.latest("./recorded")
     		.then(function(lat){
-			res.send(lat.file);
+			res.sendFile('/home/pi/camera/recorded/'+lat.file);
 	});	
 });
 
